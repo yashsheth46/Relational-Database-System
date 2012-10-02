@@ -1,0 +1,9 @@
+The entire SDBMS is written in C++. It consists of ~9000 lines of C++ code!
+
+The database system consists of the following component layer, named after their source folders here:
+pf: Page File layer. It creates its own hybrid- slotted page filee format, storing all data in binary files.
+rm: Resource management layer. Provides bit-level space management and manages creations of new partitions.
+ix: Creates dynamic hash and B+ tree indexes and manages all updates, inserts and deletes.
+qe: Query engine, follows the right first tree style of query execution and takes a query plan as input to call upon layers underneath to perform all basic RDBMS operations.
+
+This code has been used as a functioning RDBMS with a simple SQL to Query-plan converter attached on top!!
